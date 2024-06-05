@@ -1,0 +1,902 @@
+/* Reset some default styles */
+body,
+html {
+  font-family: "Ubuntu Sans", sans-serif;
+  font-size: 16px; /* Default font size */
+ 
+  padding: 0px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  body,
+  html {
+    font-size: 14px; /* Decrease font size for smaller screens */
+    padding: 10px; /* Reduce padding for smaller screens */
+    margin: 5px; /* Reduce margin for smaller screens */
+  }
+}
+
+.main-container {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(0, 107, 141) 0%,
+    rgb(0, 69, 91) 90%
+  );
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    padding: 5px; /* Reduce padding for smaller screens */
+    margin: 5px; /* Reduce margin for smaller screens */
+  }
+}
+
+nav ul li.logo {
+  margin-top: -15px;
+}
+
+nav ul li.logo a img {
+  width: 50px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to top, #09203fb1 0%, #53789590 100%);
+  padding: 10px 0; /* Add padding for spacing */
+
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  font-size: 0.7em;
+  color: #ffffff; /* Change text color to white */
+  text-align: center;
+  padding: 14px 30px;
+  transition: background 0.25s, box-shadow 0.15s;
+}
+
+nav ul li a:hover {
+  color: #4a4860;
+  background: #c4e1f0;
+  box-shadow: 0px 4px 0px 0px #3194bb;
+}
+
+/* Header styles */
+.header {
+  position: relative;
+  overflow: hidden;
+  padding: 230px 0;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+
+
+.header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px; /* Add border radius */
+}
+
+.header-content {
+  position: relative;
+  z-index: 1; /* Ensure the content is above the video */
+}
+
+/* Hide default video controls */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  padding: 0 20px; /* Adjust padding for smaller screens */
+  font-family: "Cinzel", sans-serif;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: color 0.8s ease; /* Add transition for smooth color change */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .header-content {
+    left: 35%; /* Center horizontally on smaller screens */
+    transform: translateX(-50%); /* Adjust horizontal translation */
+    padding: 0 10px; /* Further reduce padding for smaller screens if needed */
+  }
+}
+
+
+
+.waviy {
+  position: relative;
+}
+
+.waviy span {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  position: relative;
+  right: 80%; /* Adjust the initial position for smaller screens */
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.141);
+  display: inline-block;
+  font-size: 70px;
+  color: #000000;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(0.s * var(--i));
+}
+
+@keyframes flip {
+  0%, 80% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .waviy span {
+    right: 10%; /* Adjust position for smaller screens */
+    font-size: 15px;
+    animation: none; /* Remove animation for smaller screens */
+  }
+}
+
+
+@keyframes comingOut {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.header p {
+  animation: zoomOut 5s ease-out, comingOut 3s ease; /* Apply both animations */
+  font-weight: 500;
+  position: relative;
+  right: 80%; /* Adjust the initial position for smaller screens */
+  margin-top: 20px;
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .header p {
+    right: 10%; /* Adjust position for smaller screens */
+    animation-duration: 3s; /* Adjust animation duration for smaller screens */
+    font-size: 15x;
+    font-weight: 600;
+  }
+}
+
+
+
+
+/* Wave container */
+.wave-container {
+  position: absolute;
+  bottom: 50;
+  width: 100%;
+  text-align: center;
+  height: 100px;
+
+  opacity: 0.2;
+}
+
+.waves {
+  position: relative;
+  width: 85%;
+  height: 100%;
+  bottom: 50px;
+  opacity: 0.7;
+}
+
+.parallax > use {
+  animation: moveWaves 15s infinite;
+}
+
+@keyframes moveWaves {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(100px, 0, 0);
+  }
+}
+
+.image-container {
+  width: 100%;
+  height: 400px; /* Adjust the height as needed */
+  background-image: url('images/earbuds.png');
+  background-size: cover;
+  background-position: center; /* Move the background image slightly to the left */
+  animation: comingOut 2s forwards; /* Apply coming out animation */
+  font-family: "Ubuntu Sans", sans-serif; 
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  padding: 0 20px; /* Adjust padding for smaller screens */
+  margin-bottom: 20px;
+ 
+}
+
+
+
+@keyframes comingOut {
+  from {
+    opacity: 3; /* Start with 0 opacity */
+    transform: scale(0.8); /* Start with a smaller size */
+  }
+  to {
+    opacity: 9; /* End with desired opacity */
+    transform: scale(1); /* End with original size */
+  }
+}
+
+.image-container .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .image-container .content {
+    top: 60%; /* Adjust vertical positioning for smaller screens */
+    padding: 20px auto 10px; /* Set left and right padding to auto */
+    width: 80%; /* Set width to 80% for better centering */
+    right: 20px; /* Adjust the right side */
+    margin-right: -10px; /* Apply a negative margin to make the right side shorter */
+    opacity: none;
+  }
+}
+
+
+.image-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px; /* Increased margin */
+  color: white;
+  padding: 10px; /* Added padding for better spacing */
+  border: 2px solid transparent; /* Set initial border */
+  animation: borderAnimation 2s infinite alternate; /* Apply border animation */
+  background-color: #00000081;
+}
+
+@keyframes borderAnimation {
+  0% {
+    border-color: rgba(0, 0, 0, 0); /* Start with transparent border */
+    transform: scale(1); /* Start with original size */
+  }
+  100% {
+    border-color: #ffffff; /* End with white border */
+    transform: scale(1.1); /* End with slightly larger size */
+  }
+}
+
+
+
+.image-container p {
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.588); /* Add white background */
+  padding: 20px 40px; /* Adjust padding to make background larger on sides and top */
+  margin: 20px;
+}
+@keyframes backgroundAnimation {
+  from {
+    background-color: #000000; /* Start with black background */
+  }
+  to {
+    background-color: #0b141d; /* End with blue background */
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .image-container {
+    height: 300px; /* Adjust height for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+  
+  .image-container h2 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+  
+  .image-container p {
+    font-size: 10px; /* Adjust font size for smaller screens */
+    margin: 10px;
+  }
+}
+
+
+.card {
+  margin-bottom: 20px; /* Add space between cards */
+  border-color: #648293; /* Set border color */
+
+  /* Responsive adjustments */
+  padding: 20px; /* Add padding */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 1200px) {
+  .card {
+    padding: 30px; /* Increase padding for larger screens */
+  }
+}
+
+.card-img-top {
+  height: auto; /* Change height to auto to maintain aspect ratio */
+  max-width: 100%; /* Set maximum width to ensure responsiveness */
+  object-fit: cover; /* Ensure the image covers the entire space */
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(0, 107, 141) 0%,
+    rgb(0, 69, 91) 90%
+  );
+  border-color: #f7774533; /* Set border color */
+  padding: 0; /* Remove padding to eliminate white space */
+  cursor: pointer;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1); /* Zoom in by 10% on hover */
+  transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+}
+
+.card-body {
+  /* background-color: #fbd2d2; */ /* Remove or adjust background color */
+  text-align: justify;
+  padding: 20px; /* Adjust padding as needed */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .card-body {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+.card-title {
+  font-size: 18px; /* Adjust font size of card title */
+  color: #333; /* Set text color */
+  text-align: center;
+  /* padding: 20px; */ /* Remove or adjust padding to remove white space */
+}
+
+.card-text {
+  color: #666; /* Set text color for card description */
+  padding: 10px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size for readability */
+  line-height: 1.6; /* Adjust line height for spacing */
+  transition: background-color 0.8s ease, color 0.3s ease; /* hover transition */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .card-text {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    line-height: 1.4; /* Adjust line height for smaller screens */
+  }
+}
+
+.card-text:hover {
+  background-color: rgba(
+    221,
+    191,
+    178,
+    0.102
+  ); /* Set opaque background color on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  padding: 10px;
+  opacity: 0.6;
+  color: #333;
+}
+
+/* Custom CSS for styling */
+* {
+  box-sizing: border-box;
+}
+
+.photo-container {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 20px; /* Adjust padding as needed */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adjust box shadow */
+  text-align: center; /* Center-align the content */
+}
+
+.photo-container img {
+  margin-bottom: 20px; /* Add some spacing between images */
+  width: 50%; /* Ensure the image scales within its container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px; /* Match the container's border radius */
+  position: relative; /* Needed for positioning pseudo-elements */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Pseudo-elements for hover effect */
+.photo-container img::before,
+.photo-container img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px; /* Match the image's border radius */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  z-index: -1; /* Place behind the image */
+}
+
+.photo-container img::before {
+  border: 2px solid rgba(255, 204, 178, 0.5); /* Initial peach border with low opacity */
+}
+
+.photo-container img::after {
+  border: 2px solid rgb(178, 184, 255); /* Peach border */
+  transform: scale(0.9); /* Start slightly smaller */
+  opacity: 0; /* Start invisible */
+}
+
+.photo-container img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhance box shadow on hover */
+}
+
+.photo-container img:hover::before {
+  border-color: rgb(178, 195, 255); /* Make border fully visible on hover */
+  transform: scale(1.1); /* Slightly enlarge the border on hover */
+}
+
+.photo-container img:hover::after {
+  opacity: 1; /* Make the secondary border visible */
+  transform: scale(1); /* Expand to full size */
+}
+
+/* Rainbow text effect for h2 */
+.photo-container h2 {
+  font-size: 40px; /* Font size */
+  text-align: center;
+  font-family: "Cinzel", serif;
+  margin-bottom: 40px;
+  position: relative; /* Needed for pseudo-elements */
+  background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-animation: borderAnimation 2s infinite alternate; /* Apply border animation */
+  animation: borderAnimation 2s infinite alternate; /* Apply border animation */
+}
+
+@keyframes borderAnimation {
+  0% {
+    text-shadow: 0 0 10px violet;
+  }
+  14.3% {
+    text-shadow: 0 0 10px indigo;
+  }
+  28.6% {
+    text-shadow: 0 0 10px blue;
+  }
+  42.9% {
+    text-shadow: 0 0 10px green;
+  }
+  57.2% {
+    text-shadow: 0 0 10px yellow;
+  }
+  71.5% {
+    text-shadow: 0 0 10px orange;
+  }
+  85.8% {
+    text-shadow: 0 0 10px red;
+  }
+  100% {
+    text-shadow: 0 0 10px violet;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .photo-container {
+    padding: 10px; /* Reduce padding */
+  }
+
+  .photo-container img {
+    margin-bottom: 10px; /* Reduce margin between images */
+  }
+
+  .photo-container h2 {
+    font-size: 20px; /* Reduce font size */
+    padding: 20px; /* Reduce padding */
+  }
+}
+
+.container-contact {
+
+  text-align: center;
+  margin: 40px;
+}
+.container-contact h3{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  margin: 10px;
+  color: #2f4e83;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.container-contact h3:hover {
+  color: rgb(111, 165, 184); /* Change color to black on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .container-contact {
+    margin: px; /* Reduce margin for smaller screens */
+  }
+
+  .container-contact h3 {
+    margin: 5px; /* Reduce margin for smaller screens */
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+}
+
+
+.buy-links-container {
+  text-align: center;
+  margin: 20px; /* Add margin to separate from other containers */
+  padding: 20px; /* Add padding for spacing */
+  background-color: #f8f9fa; /* Background color */
+  border-radius: 10px; /* Add border radius */
+  opacity: 0.9;
+}
+
+.buy-links-container h3 {
+  font-size: 24px;
+  color: #222226; /* Title color */
+  font-family: "Cinzel", serif;
+  animation: fadeInDown 1s ease; /* Apply fadeInDown animation */
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buy-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+  color: #000000;
+}
+
+.buy-links-list li {
+  display: inline;
+  margin: 0 10px; /* Adjust margin between links */
+  color: #000000;
+}
+
+.buy-links-list li a {
+  text-decoration: none;
+  color: #000000; /* Link color */
+  cursor: pointer;
+}
+
+.buy-links-list li a:hover {
+  text-decoration: none;
+  color: #4c86af; /* Change color on hover */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition for color change and zoom out effect */
+  transform: scale(0.95); /* Apply zoom out effect */
+}
+
+
+.footer {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(0, 107, 141) 0%,
+    rgb(0, 69, 91) 90%
+  );
+  padding: 20px 0; /* Adjust padding as needed */
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    padding: 20px 5px; /* Adjust padding for smaller screens */
+  }
+}
+
+.social-icons {
+  margin-top: 10px; /* Adjust margin as needed */
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 10px; /* Adjust margin between icons as needed */
+  font-size: 24px; /* Adjust icon size as needed */
+  color: #ffffff; /* Choose your desired icon color */
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #7ed0e9; /* Choose your desired hover color */
+  transform: scale(1.1); /* Apply a scale transformation on hover */
+  transition: transform 0.6s ease; /* Add a smooth transition for the zoom effect */
+}
+
+/* General styles */
+.form-group {
+  margin-bottom: 30px;
+  font-family: "Ubuntu Sans", sans-serif;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 30px;
+  font-family: "Ubuntu Sans", sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  padding-top: 55px;
+  padding-bottom: 50px;
+  font-family: "Ubuntu Sans", sans-serif;
+  text-align: center;
+  color: #ffffff;
+}
+
+footer p {
+  margin: 20px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  footer p {
+    margin: 10px; /* Adjust margin for smaller screens */
+    font-size: 10px;
+  }
+}
+
+
+.btn.btn-primary {
+  padding: 10px 20px; /* Default padding */
+  color: #ffffff;
+  background-color: #4c86af; /* Green background */
+  border-style: none;
+}
+
+#responseContainer {
+  margin-top: 50px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #3b3b41;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .form-group,
+  .input-group {
+    margin-bottom: 15px; /* Reduce margin for smaller screens */
+  }
+
+  .input-group {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .container {
+    padding-top: 80px; /* Adjust padding for smaller screens */
+    padding-bottom: 50px; /* Adjust padding for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .btn.btn-primary {
+    padding: 16px 16px; /* Adjust padding for smaller screens */
+  }
+
+  #responseContainer {
+    padding: 10px; /* Reduce padding for smaller screens */
+    border-radius: 5px; /* Reduce border radius for smaller screens */
+  }
+
+  #responseContainer h2 {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+}
+
+#responseContainer p {
+  font-size: 18px; /* Adjust font size for smaller screens */
+  line-height: 2;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-top: 60px; /* Further adjust padding for even smaller screens */
+    padding-bottom: 30px; /* Further adjust padding for even smaller screens */
+    font-size: 14px; /* Further adjust font size for even smaller screens */
+  }
+}
+
+/* Styles for response items */
+.response-item {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button[type="submit"] {
+  background-color: #4c86af; /* Green background */
+  border: none; /* Remove border */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove default underline */
+  display: inline-block; /* Make it an inline-block element */
+  font-size: 16px; /* Font size */
+  border-radius: 5px; /* Border radius */
+  cursor: pointer; /* Cursor style */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+  margin: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #346077; /* Darker green background on hover */
+}
+
+.buy-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 30px;
+  background-color: #68818b; /* Peach color */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.buy-btn:hover {
+  background-color: #2f4e83; /* Darker peach color on hover */
+}
+
+.buy-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.3); /* White color with opacity */
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.buy-btn:hover::before {
+  opacity: 1;
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+      0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.3),
+      0 0 40px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+      0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.6),
+      0 0 80px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.home-button {
+  position: fixed;
+  bottom: 20px;
+  right: 40px; /* Adjusted to right */
+  background-color: #ffffff;
+  color: #383677;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.home-button:hover {
+  background-color: #c3d0e7;
+  color: #5a3ea2;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .home-button {
+    bottom: 10px;
+    right: 70px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    position: fixed;
+  }
+}
